@@ -1,5 +1,5 @@
-server:
-  build: .
+apache:
+  build: ./apache
   ports:
     - "80:80"
     - "443:443"
