@@ -1,4 +1,4 @@
-FROM nginx:1.11.10-alpine
+FROM jwilder/nginx-proxy
 
 MAINTAINER MaxymVlasov <m.vlasov@post.com>
 
