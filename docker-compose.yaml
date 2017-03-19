@@ -1,11 +1,10 @@
-version: '2'
+version: '3'
 
 services:
   apache:
     build: ./apache
     ports:
       - "8080:8080"
-      - "443:443"
     volumes:
       - ./html:/var/www/
   nodejs:

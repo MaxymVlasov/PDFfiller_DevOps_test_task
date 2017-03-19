@@ -10,9 +10,8 @@ RUN a2enmod rewrite && service apache2 restart
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY ports.conf /etc/apache2/ports.conf
 
-# Open ports
+# Open port
 EXPOSE 8080
-EXPOSE 443
 
 # Run Apache server in background
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
