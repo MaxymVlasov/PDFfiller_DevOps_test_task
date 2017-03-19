@@ -1,4 +1,4 @@
-FROM node:7
+FROM node:7-alpine
 
 MAINTAINER MaxymVlasov <m.vlasov@post.com>
 

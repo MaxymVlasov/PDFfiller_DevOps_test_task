@@ -1,4 +1,4 @@
-FROM nimmis/apache-php5
+FROM eboraas/apache:latest
 
 MAINTAINER MaxymVlasov <m.vlasov@post.com>
 
