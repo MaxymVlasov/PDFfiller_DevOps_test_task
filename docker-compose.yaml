@@ -5,3 +5,7 @@ apache:
     - "443:443"
   volumes:
     - ./html:/var/www/
+nodejs:
+  build: ./nodejs
+  ports:
+    - "8000:8000"
