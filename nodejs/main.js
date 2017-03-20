@@ -30,4 +30,4 @@ http.createServer((req, res) => {
   } else {
     givePage(req, res, routes[''])
   }
-}).listen(8000, '0.0.0.0')
+}).listen(process.env.PORT || 8000, '0.0.0.0')

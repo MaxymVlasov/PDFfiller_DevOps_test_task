@@ -7,13 +7,25 @@ services:
       - "8080"
     volumes:
       - ./html:/var/www/
+    links:
+      - node1:node1
+      - node2:node2
+      - node3:node3
     environment:
     - VIRTUAL_HOST=0.0.0.0
     - VIRTUAL_PROTO=http
-  nodejs:
+  node1:
     build: ./nodejs
     ports:
-      - "8000:8000"
+      - "8000"
+  node2:
+    build: ./nodejs
+    ports:
+      - "8000"
+  node3:
+    build: ./nodejs
+    ports:
+      - "8000"
   nginx:
     build: ./nginx
     ports:
