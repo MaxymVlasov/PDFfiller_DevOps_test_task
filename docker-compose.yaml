@@ -2,23 +2,26 @@ version: '3'
 
 services:
   apache:
-    build: ./apache
+    image: maxymvlasov/apache-pdffiller
     ports:
       - "8080"
     volumes:
       - ./html:/var/www/
     environment:
-    - VIRTUAL_HOST=0.0.0.0
-    - VIRTUAL_PROTO=http
+      - VIRTUAL_HOST=0.0.0.0
+      - VIRTUAL_PROTO=http
   nodejs:
-    build: ./nodejs
+    image: maxymvlasov/nodejs-pdffiller
     ports:
       - "8000:8000"
+    environment:
+      - "constraint:node==node-1"
   nginx:
-    build: ./nginx
+    image: maxymvlasov/nginx-pdffiller
     ports:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     environment:
-    - VIRTUAL_PORT=8080
+      - VIRTUAL_PORT=8080
+      - "constraint:node==node-1"
